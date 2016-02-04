@@ -6,6 +6,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', function (req, res) {
+    var user = req.body.user_name;
 
     var body = {
         response_type: "in_channel",
