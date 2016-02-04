@@ -10,7 +10,7 @@ app.post('/', function (req, res) {
 
     var body = {
         response_type: "in_channel",
-        text: ":badjokeeel: " + req.body.text
+        text: ":badjokeeel: " + req.body.text + " from: " + user
     };
 
     res.send(body);
