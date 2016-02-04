@@ -1,0 +1,15 @@
+# IDE files
+/.settings
+/.buildpath
+/.project
+/.idea
+/.vagrant
+atlassian-ide-plugin.xml
+composer.phar
+/vendor
+build/
+/cov
+.DS_Store
+*~
+
+/node_modules
