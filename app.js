@@ -19,11 +19,16 @@ function startUpShutDown (process, colorString) {
         var colorArray = colorString.split(colorString);
     }
 
-    pixelData[0] = color(0, 0, 0);
-    ws281x.render(pixelData);
+    //pixelData[0] = color(0, 0, 0);
+    //ws281x.render(pixelData);
+
+    console.log(colorArray);
 
     if ('startup' === process) {
         pixelData[0] = color(colorArray[0], colorArray[1], colorArray[2]);
+
+        console.log(pixelData);
+
         ws281x.render(pixelData);
     }
 
