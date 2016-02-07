@@ -16,7 +16,7 @@ ws281x.init(NUM_LEDS);
 
 function startUpShutDown (process, colorString) {
     if (null !== colorString) {
-        var colorArray = colorString.split(colorString);
+        var colorArray = colorString.split(',');
     }
 
     //pixelData[0] = color(0, 0, 0);
