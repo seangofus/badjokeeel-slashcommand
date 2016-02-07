@@ -12,15 +12,15 @@ var NUM_LEDS = parseInt(process.argv[2], 10) || 1,
 
 var brightness = 128;
 
-ws281x.init(NUM_LEDS);
+
 
 function startUpShutDown (process, colorString) {
     if (null !== colorString) {
         var colorArray = colorString.split(',');
     }
 
-    //pixelData[0] = color(0, 0, 0);
-    //ws281x.render(pixelData);
+    pixelData[0] = color(0, 0, 0);
+    ws281x.render(pixelData);
 
     console.log(colorArray);
 
@@ -47,6 +47,8 @@ function color(r, g, b) {
 }
 
 app.post('/', function (req, res) {
+    ws281x.init(NUM_LEDS);
+
     var user = req.body.user_name;
     var color = '0,153,255';
     if ('sean' === user) {
