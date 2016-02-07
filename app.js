@@ -53,11 +53,12 @@ app.post('/', function (req, res) {
         text: ":badjokeeel: " + req.body.text + " from: " + user
     };
 
-    res.send(body);
     startUpShutDown('startup', color);
     setTimeout(function() {
         startUpShutDown('shutdown', null);
     }, 5000);
+    
+    res.send(body);
 });
 
 app.listen(8080, function () {
