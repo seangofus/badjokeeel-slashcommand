@@ -10,7 +10,7 @@ var ws281x = require('rpi-ws281x-native');
 var NUM_LEDS = parseInt(process.argv[2], 10) || 1,
     pixelData = new Uint32Array(NUM_LEDS);
 
-var brightness = 128;
+var brightness = 255;
 
 
 
