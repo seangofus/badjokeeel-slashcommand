@@ -12,7 +12,11 @@ var NUM_LEDS = parseInt(process.argv[2], 10) || 1,
 
 var brightness = 255;
 
-
+// ---- trap the SIGINT and reset before exit
+process.on('SIGINT', function () {
+    ws281x.reset();
+    process.nextTick(function () { process.exit(0); });
+});
 
 function startUpShutDown (process, colorString) {
     if (null !== colorString) {
@@ -22,13 +26,8 @@ function startUpShutDown (process, colorString) {
     pixelData[0] = color(0, 0, 0);
     ws281x.render(pixelData);
 
-    console.log(colorArray);
-
     if ('startup' === process) {
         pixelData[0] = color(colorArray[0], colorArray[1], colorArray[2]);
-
-        console.log(pixelData);
-
         ws281x.render(pixelData);
     }
 
