@@ -52,10 +52,13 @@ app.post('/', function (req, res) {
     var user = req.body.user_name;
     var color = '0,153,255';
     if ('sean' === user) {
-        //var color = '255,0,255';
-        var color = '255,153,0'
+        var color = '255,0,255';
     } else if ('dgspurgin' === user) {
         var color = '255,153,0';
+    } else if ('keganv' === user) {
+        var color = '102,255,0';
+    } else if ('mike' === user) {
+        var color = '0,153,255';
     }
 
     var body = {
